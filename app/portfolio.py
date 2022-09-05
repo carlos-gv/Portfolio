@@ -12,14 +12,15 @@ def index():
 
 @bp.route('/mail', methods=['GET', 'POST'])
 def mail():
-    name = request.form.get('name')
-    email = request.form.get('email')
-    content = request.form.get('content')
+    # name = request.form.get('name')
+    # email = request.form.get('email')
+    # content = request.form.get('content')
 
-    if request.method== 'POST':
-        send_email(name, email, content)
-        return render_template('portfolio/send_mail.html')
-    return redirect(url_for('portfolio.index'))
+    # if request.method== 'POST':
+        # send_email(name, email, content)
+        # return render_template('portfolio/send_mail.html')
+    # return redirect(url_for('portfolio.index'))
+    return lala
 
 def send_email(name, email, content):
     my_email = current_app.config['MY_EMAIL']
