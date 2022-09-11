@@ -39,6 +39,7 @@ def send_email(name, email, content):
         <p>Mensaje: -content-</p>
     """
     mail = Mail(my_email, to_email, 'Nuevo contacto desde la web', html_content=html_content)
-    response_mail = mail.get()
-    response_mail['personalizations']=None
-    response = sg.client.mail.send.post(request_body=response_mail)
+    try:
+        response = sg.client.mail.send.post(request_body=mail.get())
+    except Exception as e:
+        print("OCURRIO UN ERROR!! : " + str(e))
